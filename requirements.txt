@@ -1,0 +1,5 @@
+pure-python-adb
+opencv-python
+pytesseract
+pandas
+Pillow
