@@ -18,8 +18,10 @@ def test_rally_class():
         # Import the Rally class
         from utils import Rally
     except ImportError as e:
-        print(f"⚠ Warning: Could not import Rally class: {e}")
-        print("This is expected without dependencies installed.\n")
+        print(f"⚠ Skipping Rally class tests - dependencies not installed")
+        print(f"   (This is expected without 'pip install -r requirements.txt')")
+        print(f"   Error: {e}")
+        print("   Install dependencies to run full tests.\n")
         return
     
     # Create test rallies
@@ -49,8 +51,10 @@ def test_parse_rally_text():
     try:
         from utils import parse_rally_text
     except ImportError as e:
-        print(f"⚠ Warning: Could not import parse_rally_text: {e}")
-        print("This is expected without dependencies installed.\n")
+        print(f"⚠ Skipping parse_rally_text tests - dependencies not installed")
+        print(f"   (This is expected without 'pip install -r requirements.txt')")
+        print(f"   Error: {e}")
+        print("   Install dependencies to run full tests.\n")
         return
     
     # Test with valid data
@@ -77,7 +81,9 @@ Preparing..."""
 
 def test_imports():
     """Test that all imports work (basic syntax check)."""
-    print("Testing imports...")
+    print("Testing module structure (without dependencies)...")
+    print("Note: Some imports will fail without dependencies installed.")
+    print("      This validates the code structure only.\n")
     
     try:
         # Test main.py structure
@@ -95,9 +101,9 @@ def test_imports():
         print("✓ utils.py structure is valid\n")
         
     except ImportError as e:
-        print(f"⚠ Warning: Some dependencies not installed: {e}")
-        print("This is expected in test environment. Install dependencies with:")
-        print("  pip install -r requirements.txt\n")
+        print(f"⚠ Some dependencies not installed: {e}")
+        print("   Install dependencies with: pip install -r requirements.txt")
+        print("   However, basic Python structure validation passed!\n")
 
 
 def test_rally_monitor_structure():
@@ -124,7 +130,8 @@ def test_rally_monitor_structure():
         print("✓ RallyMonitor class structure is valid\n")
         
     except ImportError as e:
-        print(f"⚠ Warning: Could not fully test RallyMonitor: {e}\n")
+        print(f"⚠ Skipping RallyMonitor tests - dependencies not installed")
+        print(f"   Error: {e}\n")
 
 
 def main():

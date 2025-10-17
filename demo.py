@@ -1,11 +1,20 @@
 """
 Example demonstration of the Rally data structure and workflow.
 This script shows how the bot processes rally data without requiring actual dependencies.
+
+Note: This demo includes a simplified Rally class for demonstration purposes only,
+to avoid dependency on external libraries. The actual Rally class is in utils.py.
 """
 
 
 class Rally:
-    """Example Rally class (simplified for demo)."""
+    """
+    Example Rally class (simplified for demo).
+    
+    Note: This is a simplified version for demonstration purposes.
+    The actual implementation is in utils.py and includes additional
+    methods like __eq__ and __hash__ for proper state tracking.
+    """
     
     def __init__(self, player_name, target, status):
         self.player_name = player_name
